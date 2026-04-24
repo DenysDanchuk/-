@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="product">
+    <img src="{{ product.image }}">
+
+    <div>
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <h3>{{ product.price }} грн</h3>
+
+        <a class="btn" href="/add/{{ product.id }}">Додати в кошик</a>
+        <br><br>
+        <a href="/">← Назад</a>
+    </div>
+</div>
+
+</body>
+</html>
