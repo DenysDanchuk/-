@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагувати банер</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Редагувати рекламний банер</h1>
+
+    <nav>
+        <a href="/admin/banners">Рекламні банери</a>
+        <a href="/admin">Адмін-панель</a>
+    </nav>
+</header>
+
+<main>
+    <form method="post" class="order-form">
+        <label>Заголовок:</label>
+        <input type="text" name="title" value="{{ banner.title }}" required>
+
+        <label>Опис:</label>
+        <textarea name="description" required>{{ banner.description }}</textarea>
+
+        <label>Посилання на картинку:</label>
+        <input type="text" name="image" value="{{ banner.image }}" required>
+
+        <label>Назва кнопки:</label>
+        <input type="text" name="button_text" value="{{ banner.button_text }}" required>
+
+        <label>Дія кнопки / посилання:</label>
+        <input type="text" name="button_link" value="{{ banner.button_link }}" required>
+
+        <button type="submit">Зберегти зміни</button>
+    </form>
+</main>
+
+</body>
+</html>

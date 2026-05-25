@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Замовлення</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    {% for order in orders %}
+        <div class="order">
+            <h3>Замовлення №{{ order.id }}</h3>
+            <p><b>Клієнт:</b> {{ order.name }}</p>
+            <p><b>Телефон:</b> {{ order.phone }}</p>
+            <p><b>Адреса:</b> {{ order.address }}</p>
+
+            <h4>Товари:</h4>
+
+            {% for item in order["items"] %}
+                <p>{{ item.name }} — {{ item.price }} грн</p>
+            {% endfor %}
+
+            <h4>Сума: {{ order.total }} грн</h4>
+        </div>
+    {% endfor %}
+</main>
+
+</body>
+</html>

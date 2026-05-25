@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кошик</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+        <a href="/check-compatibility">Сумісність</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h2>Кошик</h2>
+
+    {% if cart %}
+        {% for p in cart %}
+            <div class="cart-item">
+                <p>{{ p.name }}</p>
+                <p>{{ p.price }} грн</p>
+            </div>
+        {% endfor %}
+
+        <h3>Загальна сума: {{ total }} грн</h3>
+
+        <a class="btn" href="/checkout">Оформити замовлення</a>
+        <a class="btn secondary" href="/clear-cart">Очистити кошик</a>
+    {% else %}
+        <p>Кошик порожній.</p>
+    {% endif %}
+</main>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Додати товар</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Додати товар</h1>
+    <nav>
+        <a href="/admin">Адмін-панель</a>
+        <a href="/">Каталог</a>
+    </nav>
+</header>
+
+<main>
+    <form method="post" class="order-form">
+        <input type="text" name="name" placeholder="Назва товару" required>
+        <input type="text" name="category" placeholder="Категорія" required>
+        <input type="number" name="price" placeholder="Ціна" required>
+        <input type="text" name="image" placeholder="Посилання на фото" required>
+        <input type="number" name="stock" placeholder="Кількість на складі" required>
+        <input type="text" name="socket" placeholder="Сокет (наприклад AM4, AM5, LGA1700)">
+        <input type="text" name="memory_type" placeholder="Тип пам’яті (DDR4 або DDR5)">
+        <input type="number" name="power" placeholder="Споживання W для CPU/GPU">
+        <input type="number" name="wattage" placeholder="Потужність W для блока живлення">
+
+        <textarea name="description" placeholder="Опис товару" required></textarea>
+
+        <button type="submit">Додати товар</button>
+    </form>
+</main>
+
+</body>
+</html>

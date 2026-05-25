@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+        <a href="/check-compatibility">Сумісність</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="product-page">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p><b>Категорія:</b> {{ product.category }}</p>
+            <p><b>Ціна:</b> {{ product.price }} грн</p>
+            <p><b>На складі:</b> {{ product.stock }}</p>
+            <p>{{ product.description }}</p>
+
+            {% if product.stock > 0 %}
+                <a class="btn" href="/add/{{ product.id }}">Додати в кошик</a>
+                {% if product.category == "Процесори" or product.category == "Материнські плати" or product.category == "Оперативна пам’ять" or product.category == "Відеокарти" %}
+            <form method="get" action="/check-compatibility" class="single-check-form">
+                <label class="compatibility-check">
+            <input type="checkbox" name="selected_products" value="{{ product.id }}" checked>
+                Перевірити на сумісність
+            </label>
+
+            <button type="submit">Перейти до перевірки</button>
+            </form>
+            {% endif %}
+            {% else %}
+                <p class="danger">Товару немає в наявності</p>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

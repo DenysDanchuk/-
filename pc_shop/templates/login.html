@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вхід адміністратора</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<main class="login-box">
+    <h1>Вхід в адмін-панель</h1>
+
+    <form method="post">
+        <input type="password" name="password" placeholder="Введіть пароль" required>
+        <button type="submit">Увійти</button>
+    </form>
+
+    <p class="danger">{{ error }}</p>
+
+    <a href="/">← Назад на сайт</a>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагувати товар</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Редагувати товар</h1>
+    <nav>
+        <a href="/admin">Адмін-панель</a>
+        <a href="/">Каталог</a>
+    </nav>
+</header>
+
+<main>
+    <form method="post" class="order-form">
+        <input type="text" name="name" value="{{ product.name }}" required>
+
+        <input type="text" name="category" value="{{ product.category }}" required>
+
+        <input type="number" name="price" value="{{ product.price }}" required>
+
+        <input type="text" name="image" value="{{ product.image }}" required>
+
+        <input type="number" name="stock" value="{{ product.stock }}" required>
+
+        <textarea name="description" required>{{ product.description }}</textarea>
+
+        <button type="submit">Зберегти зміни</button>
+    </form>
+</main>
+
+</body>
+</html>

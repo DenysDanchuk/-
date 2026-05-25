@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Зустрічайте нову серію ігрових відеокарт NVIDIA 50XX!",
+        "description": "Більше продуктивності для сучасних ігор, графіки та роботи з 3D.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "button_text": "Переглянути товари",
+        "button_link": "/?category=Відеокарти"
+    },
+    {
+        "id": 2,
+        "title": "Знижки на SSD накопичувачі до 20%",
+        "description": "Оновіть свій ПК швидким NVMe або SATA SSD для кращої роботи системи.",
+        "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b",
+        "button_text": "Перейти до SSD",
+        "button_link": "/?category=SSD"
+    },
+    {
+        "id": 3,
+        "title": "Перевірте сумісність комплектуючих перед покупкою",
+        "description": "Оберіть процесор, материнську плату, RAM та відеокарту — система підкаже, чи все підходить.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "button_text": "Перевірити сумісність",
+        "button_link": "/check-compatibility"
+    }
+]

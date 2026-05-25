@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Адмін-панель</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Адмін-панель</h1>
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/orders">Замовлення</a>
+        <a href="/add-product">Додати товар</a>
+        <a href="/admin/banners">Рекламні банери</a>
+        <a href="/logout">Вийти</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Статистика магазину</h2>
+
+    <div class="stats">
+        <div>
+            <h3>{{ total_orders }}</h3>
+            <p>Кількість замовлень</p>
+        </div>
+
+        <div>
+            <h3>{{ total_sales }} грн</h3>
+            <p>Сума продажів</p>
+        </div>
+    </div>
+
+    <h2>Товари з малим залишком</h2>
+
+    {% if low_stock %}
+        {% for p in low_stock %}
+            <div class="cart-item">
+                <p>{{ p.name }} — залишок: {{ p.stock }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Усі товари є в достатній кількості.</p>
+    {% endif %}
+
+    <h2>Керування товарами</h2>
+
+    {% for p in products %}
+    <div class="cart-item">
+        <p><b>{{ p.name }}</b></p>
+        <p>Категорія: {{ p.category }}</p>
+        <p>Ціна: {{ p.price }} грн</p>
+        <p>На складі: {{ p.stock }}</p>
+
+        <a class="btn" href="/edit-product/{{ p.id }}">Редагувати</a>
+
+        <form method="post" action="/delete-product/{{ p.id }}" style="display:inline;">
+            <button type="submit" class="delete-btn">
+                Видалити товар
+            </button>
+        </form>
+        
+        <!-- Зменшити кількість -->
+        <form method="post" action="/remove-product/{{ p.id }}">
+            <input
+                type="number"
+                name="amount"
+                placeholder="Кількість для видалення"
+                min="1"
+                required
+            >
+            <button type="submit">
+                Видалити кількість
+            </button>
+        </form>
+
+        <!-- Додати кількість -->
+        <form method="post" action="/increase-stock/{{ p.id }}">
+            <input
+                type="number"
+                name="amount"
+                placeholder="Кількість для додавання"
+                min="1"
+                required
+            >
+            <button type="submit">
+                Додати кількість
+            </button>
+        </form>
+
+    </div>
+{% endfor %}
+</main>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Рекламні банери</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Рекламні банери</h1>
+
+    <nav>
+        <a href="/admin">Адмін-панель</a>
+        <a href="/">Каталог</a>
+        <a href="/logout">Вийти</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Керування рекламними панелями</h2>
+
+    {% for banner in banners %}
+        <div class="cart-item">
+            <h3>{{ banner.title }}</h3>
+
+            <p>{{ banner.description }}</p>
+
+            <img src="{{ banner.image }}" class="banner-preview">
+
+            <p><b>Текст кнопки:</b> {{ banner.button_text }}</p>
+            <p><b>Дія кнопки:</b> {{ banner.button_link }}</p>
+
+            <a class="btn" href="/edit-banner/{{ banner.id }}">
+                Редагувати банер
+            </a>
+        </div>
+    {% endfor %}
+</main>
+
+</body>
+</html>

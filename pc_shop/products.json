@@ -1,0 +1,224 @@
+[
+    {
+        "id": 1,
+        "name": "AMD Ryzen 5 5600",
+        "category": "Процесори",
+        "price": 4499,
+        "description": "6-ядерний процесор AMD Ryzen 5 5600 для ігор, навчання та роботи. Підходить для платформи AM4.",
+        "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea",
+        "stock": 11,
+        "socket": "AM4",
+        "power": 65
+    },
+    {
+        "id": 2,
+        "name": "AMD Ryzen 7 5700X",
+        "category": "Процесори",
+        "price": 7299,
+        "description": "8-ядерний процесор для продуктивних ігрових та робочих систем на платформі AM4.",
+        "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea",
+        "stock": 6,
+        "socket": "AM4",
+        "power": 65
+    },
+    {
+        "id": 3,
+        "name": "AMD Ryzen 5 7600",
+        "category": "Процесори",
+        "price": 8499,
+        "description": "Сучасний процесор AMD Ryzen для платформи AM5 з підтримкою DDR5.",
+        "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea",
+        "stock": 5,
+        "socket": "AM5",
+        "power": 65
+    },
+    {
+        "id": 4,
+        "name": "Intel Core i5-12400F",
+        "category": "Процесори",
+        "price": 5899,
+        "description": "Популярний процесор Intel Core i5 для ігрових і домашніх ПК.",
+        "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea",
+        "stock": 9,
+        "socket": "LGA1700",
+        "power": 65
+    },
+    {
+        "id": 5,
+        "name": "Intel Core i7-12700K",
+        "category": "Процесори",
+        "price": 11499,
+        "description": "Потужний процесор Intel Core i7 для ігор, монтажу відео та складних задач.",
+        "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea",
+        "stock": 4,
+        "socket": "LGA1700",
+        "power": 125
+    },
+    {
+        "id": 6,
+        "name": "Asus TUF GAMING B550M-PLUS",
+        "category": "Материнські плати",
+        "price": 4999,
+        "description": "Материнська плата для процесорів AMD Ryzen на сокеті AM4 з підтримкою оперативної пам’яті DDR4.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "stock": 24,
+        "socket": "AM4",
+        "memory_type": "DDR4"
+    },
+    {
+        "id": 7,
+        "name": "MSI B550M PRO-VDH",
+        "category": "Материнські плати",
+        "price": 3899,
+        "description": "Материнська плата формату microATX для AMD AM4 та DDR4.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "stock": 8,
+        "socket": "AM4",
+        "memory_type": "DDR4"
+    },
+    {
+        "id": 8,
+        "name": "Gigabyte B650 Gaming X AX",
+        "category": "Материнські плати",
+        "price": 7899,
+        "description": "Материнська плата для сучасних процесорів AMD AM5 з підтримкою DDR5.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "stock": 5,
+        "socket": "AM5",
+        "memory_type": "DDR5"
+    },
+    {
+        "id": 9,
+        "name": "ASUS PRIME B760M-A DDR4",
+        "category": "Материнські плати",
+        "price": 5199,
+        "description": "Материнська плата для процесорів Intel LGA1700 з підтримкою DDR4.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "stock": 7,
+        "socket": "LGA1700",
+        "memory_type": "DDR4"
+    },
+    {
+        "id": 10,
+        "name": "MSI PRO Z790-A WIFI",
+        "category": "Материнські плати",
+        "price": 10199,
+        "description": "Продуктивна материнська плата для Intel LGA1700 з підтримкою DDR5.",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+        "stock": 3,
+        "socket": "LGA1700",
+        "memory_type": "DDR5"
+    },
+    {
+        "id": 11,
+        "name": "Kingston Fury 16GB DDR4",
+        "category": "Оперативна пам’ять",
+        "price": 1899,
+        "description": "16 GB оперативної пам’яті DDR4 для ігрових та офісних ПК.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 20,
+        "memory_type": "DDR4"
+    },
+    {
+        "id": 12,
+        "name": "Corsair Vengeance LPX 32GB DDR4",
+        "category": "Оперативна пам’ять",
+        "price": 3399,
+        "description": "Комплект оперативної пам’яті DDR4 обсягом 32 GB.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 10,
+        "memory_type": "DDR4"
+    },
+    {
+        "id": 13,
+        "name": "Kingston Fury Beast 16GB DDR5",
+        "category": "Оперативна пам’ять",
+        "price": 2699,
+        "description": "Сучасна оперативна пам’ять DDR5 для нових платформ.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 12,
+        "memory_type": "DDR5"
+    },
+    {
+        "id": 14,
+        "name": "G.Skill Trident Z5 32GB DDR5",
+        "category": "Оперативна пам’ять",
+        "price": 5299,
+        "description": "Швидка оперативна пам’ять DDR5 для продуктивних ігрових ПК.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 6,
+        "memory_type": "DDR5"
+    },
+    {
+        "id": 15,
+        "name": "NVIDIA RTX 4060 Ti",
+        "category": "Відеокарти",
+        "price": 15999,
+        "description": "Відеокарта NVIDIA RTX 4060 Ti для сучасних ігор у Full HD та 1440p.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 5,
+        "power": 160
+    },
+    {
+        "id": 16,
+        "name": "Asus GeForce RTX 5070 Prime OC",
+        "category": "Відеокарти",
+        "price": 31999,
+        "description": "Потужна ігрова відеокарта для сучасних ігор, графіки та роботи з 3D.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 23,
+        "power": 250
+    },
+    {
+        "id": 17,
+        "name": "NVIDIA RTX 3060 12GB",
+        "category": "Відеокарти",
+        "price": 10999,
+        "description": "Відеокарта для Full HD ігор та роботи з графікою.",
+        "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704",
+        "stock": 4,
+        "power": 170
+    },
+    {
+        "id": 18,
+        "name": "Samsung 970 EVO Plus 1TB",
+        "category": "SSD",
+        "price": 3299,
+        "description": "Швидкий NVMe SSD накопичувач обсягом 1 TB для системи, ігор та програм.",
+        "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b",
+        "stock": 8,
+        "storage_type": "NVMe",
+        "capacity": "1TB"
+    },
+    {
+        "id": 19,
+        "name": "Corsair CV650 650W",
+        "category": "Блоки живлення",
+        "price": 3099,
+        "description": "Блок живлення потужністю 650W для середніх ігрових систем.",
+        "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
+        "stock": 7,
+        "wattage": 650
+    },
+    {
+        "id": 20,
+        "name": "Seasonic Focus GX-750",
+        "category": "Блоки живлення",
+        "price": 5599,
+        "description": "Якісний блок живлення 750W для потужних ігрових конфігурацій.",
+        "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7",
+        "stock": 5,
+        "wattage": 750
+    },
+    {
+        "id": 21,
+        "name": "Материнська плата ASRock B650M-HDV/M.2",
+        "category": "Материнські плати",
+        "price": 4999,
+        "description": "Компактна материнська плата від ASRock з сокетом AM5, розрахована на ігрові зборки на базі процесорів Ryzen нового покоління (серія 7000 і вище), швидкісних M.2 накопичувачів та оперативної пам’яті DDR5, яка набула популярності на масовому ринку лише у 2022 році. Плата не входить у якусь конкретну серію продуктів від ASRock, та за ціною, рівнем оснащення і позиціонуванням належить до середнього класу.\r\n\r\nЧудово підійде для казуальних і не надто вимогливих геймерів, які збирають ігрову систему середнього рівня з пам’яттю DDR5 і процесорами Ryzen поточного і майбутніх поколінь. Незважаючи на компактні розміри, оснащена достатньо продуктивною цифровою підсистемою з 11 фазами живлення, охолодженням зони VRM і слотів M.2. Важливо зазначити, що конвертер живлення розроблявся з урахуванням особливостей електроживлення сокета AM5 і чипів Ryzen 7000, тому її складно загнати у глухий кут навіть дуже потужним процесором.\r\n\r\nМініатюрний формат micro-ATX вирізняється продуманою розведенням компонентів, що полегшує збірку ПК у стиснених умовах мініатюрного корпусу. ASRock B650M-HDV/M.2 підтримує встановлення двох модулів оперативної пам’яті DDR5 з максимальною частотою 6400 МГц і загальним обсягом не більше 64 ГБ. Компоновка слотів дозволяє встановити у ПК до двох високошвидкісних M.2 SSD (шина PCIe 4.0/5.0) і чотирьох стандартних накопичувачів з підключенням по шині SATA3.\r\n\r\nДля встановлення відеокарт передбачено 2 слоти PCIe з підтримкою режиму Crossfire і армованим волокном, яке запобігає можливій деформації важкої і масивної відеокарти. Вільні конектори по периметру плати знадобляться при монтажі світлодіодних стрічок і водяної помпи. За обробку мережевого трафіку відповідає спеціалізований LAN-контролер Dragon RTL8125BG з пропускною здатністю 2.5 Гбіт/с.",
+        "image": "data:image/jpeg;base64,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",
+        "stock": 9,
+        "socket": "AM5",
+        "memory_type": "DDR5"
+    }
+]

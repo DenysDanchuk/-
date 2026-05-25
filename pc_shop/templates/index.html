@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>PC Shop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+        <a href="/check-compatibility">Сумісність</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="top-banner promo-slider">
+
+        {% for banner in banners %}
+            <div class="promo-slide {% if loop.first %}active{% endif %}"
+                 style="background:
+                 linear-gradient(90deg, rgba(15, 23, 42, 0.92), rgba(30, 58, 138, 0.55)),
+                 url('{{ banner.image }}');
+                 background-size: cover;
+                 background-position: center;">
+
+                <div>
+                    <h2>{{ banner.title }}</h2>
+                    <p>{{ banner.description }}</p>
+                    <a href="{{ banner.button_link }}" class="btn">
+                        {{ banner.button_text }}
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <button class="slider-btn prev" type="button">‹</button>
+        <button class="slider-btn next" type="button">›</button>
+
+        <div class="slider-dots">
+            {% for banner in banners %}
+                <span class="dot {% if loop.first %}active-dot{% endif %}" data-slide="{{ loop.index0 }}"></span>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="top-banner hero">
+        <div>
+            <h2>Комплектуючі для сучасного ПК</h2>
+            <p>
+                Обирайте процесори, відеокарти, материнські плати, пам’ять та інші товари.
+                Система допоможе перевірити сумісність компонентів перед покупкою.
+            </p>
+            <a class="btn" href="/check-compatibility">Перевірити сумісність</a>
+        </div>
+    </section>
+
+    <h2>Каталог комплектуючих</h2>
+
+    <form method="get" class="filter">
+        <input type="text" name="search" placeholder="Пошук товару" value="{{ search }}">
+
+        <select name="sort">
+            <option value="">Без сортування</option>
+            <option value="cheap" {% if sort == "cheap" %}selected{% endif %}>Від дешевих до дорогих</option>
+            <option value="expensive" {% if sort == "expensive" %}selected{% endif %}>Від дорогих до дешевих</option>
+            <option value="available" {% if sort == "available" %}selected{% endif %}>Тільки в наявності</option>
+        </select>
+
+        <select name="category">
+            <option value="">Усі категорії</option>
+
+            {% for c in categories %}
+                <option value="{{ c }}" {% if c == selected_category %}selected{% endif %}>
+                    {{ c }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Знайти</button>
+    </form>
+
+    <form method="get" action="/check-compatibility">
+
+        <div class="products">
+            {% for p in products %}
+                <div class="card">
+                    <img src="{{ p.image }}" alt="{{ p.name }}">
+
+                    <h3>{{ p.name }}</h3>
+                    <p class="category-badge">{{ p.category }}</p>
+                    <p><b>{{ p.price }} грн</b></p>
+
+                    {% if p.stock == 0 %}
+                        <p class="status out">Немає в наявності</p>
+                    {% elif p.stock <= 3 %}
+                        <p class="status low">Мало товару: {{ p.stock }}</p>
+                    {% else %}
+                        <p class="status available">В наявності: {{ p.stock }}</p>
+                    {% endif %}
+
+                    <a class="btn" href="/product/{{ p.id }}">Детальніше</a>
+
+                    {% if p.category == "Процесори" or p.category == "Материнські плати" or p.category == "Оперативна пам’ять" or p.category == "Відеокарти" %}
+                        <label class="compatibility-check">
+                            <input type="checkbox" name="selected_products" value="{{ p.id }}">
+                            Перевірити на сумісність
+                        </label>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="compatibility-submit">
+            <button type="submit">Перейти до перевірки сумісності</button>
+        </div>
+
+    </form>
+
+</main>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".promo-slide");
+    const dots = document.querySelectorAll(".dot");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+
+    function showSlide(index) {
+        if (slides.length === 0) {
+            return;
+        }
+
+        slides.forEach(function(slide) {
+            slide.classList.remove("active");
+        });
+
+        dots.forEach(function(dot) {
+            dot.classList.remove("active-dot");
+        });
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active-dot");
+    }
+
+    function changeSlide(direction) {
+        if (slides.length === 0) {
+            return;
+        }
+
+        currentSlide = currentSlide + direction;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener("click", function() {
+            changeSlide(-1);
+        });
+    }
+
+    if (nextButton) {
+        nextButton.addEventListener("click", function() {
+            changeSlide(1);
+        });
+    }
+
+    dots.forEach(function(dot) {
+        dot.addEventListener("click", function() {
+            currentSlide = Number(dot.dataset.slide);
+            showSlide(currentSlide);
+        });
+    });
+
+    setInterval(function() {
+        changeSlide(1);
+    }, 5000);
+</script>
+
+</body>
+</html>

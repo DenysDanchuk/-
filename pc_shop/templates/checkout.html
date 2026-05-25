@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформлення замовлення</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+        <a href="/check-compatibility">Сумісність</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h2>Оформлення замовлення</h2>
+
+    <form method="post" class="order-form">
+        <input type="text" name="name" placeholder="Ваше ім’я" required>
+        <input type="text" name="phone" placeholder="Телефон" required>
+        <input type="text" name="address" placeholder="Адреса доставки" required>
+
+        <button type="submit">Підтвердити замовлення</button>
+    </form>
+</main>
+
+</body>
+</html>

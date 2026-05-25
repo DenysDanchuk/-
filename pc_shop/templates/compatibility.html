@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Перевірка сумісності</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <h1>PC Shop</h1>
+
+    <nav>
+        <a href="/">Каталог</a>
+        <a href="/cart">Кошик</a>
+        <a href="/check-compatibility">Сумісність</a>
+    </nav>
+
+    <div class="menu">
+        <button class="menu-btn">⋮</button>
+
+        <div class="dropdown">
+            <a href="/admin">Адмін-панель</a>
+            <a href="/orders">Замовлення</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="compatibility-box">
+        <h2>Перевірка сумісності комплектуючих</h2>
+
+        <p>
+            Виберіть основні комплектуючі для майбутнього ПК. Система перевірить,
+            чи підходить процесор до материнської плати, чи підтримується вибраний
+            тип оперативної пам’яті, а також порадить потужність блока живлення.
+        </p>
+
+        <form method="post" class="compatibility-form">
+
+            <label>Процесор:</label>
+            <select name="processor" required>
+                {% for p in processors %}
+                    <option value="{{ p.id }}" {% if p.id == selected_processor %}selected{% endif %}>
+                        {{ p.name }} — сокет {{ p.socket }}, {{ p.power }}W
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Материнська плата:</label>
+            <select name="motherboard" required>
+                {% for p in motherboards %}
+                    <option value="{{ p.id }}" {% if p.id == selected_motherboard %}selected{% endif %}>
+                        {{ p.name }} — сокет {{ p.socket }}, пам’ять {{ p.memory_type }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Оперативна пам’ять:</label>
+            <select name="ram" required>
+                {% for p in ram_list %}
+                    <option value="{{ p.id }}" {% if p.id == selected_ram %}selected{% endif %}>
+                        {{ p.name }} — {{ p.memory_type }}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <label>Відеокарта:</label>
+            <select name="gpu" required>
+                {% for p in gpus %}
+                    <option value="{{ p.id }}" {% if p.id == selected_gpu %}selected{% endif %}>
+                        {{ p.name }} — {{ p.power }}W
+                    </option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Перевірити сумісність</button>
+        </form>
+
+        {% if result %}
+            <div class="result {{ status }}">
+                {{ result }}
+            </div>
+
+            <div class="result info">
+                {{ psu_result }}
+            </div>
+        {% endif %}
+
+    </section>
+</main>
+
+</body>
+</html>
